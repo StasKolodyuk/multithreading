@@ -1,9 +1,6 @@
 package com.epam.jmp.multithreading;
 
-import com.epam.jmp.multithreading.api.BlockingQueueBroker;
-import com.epam.jmp.multithreading.api.Broker;
-import com.epam.jmp.multithreading.api.IntConsumer;
-import com.epam.jmp.multithreading.api.IntProducer;
+import com.epam.jmp.multithreading.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +28,7 @@ public class Demo {
         ExecutorService producerExecutor = Executors.newFixedThreadPool(PRODUCER_CAPACITY);
         ExecutorService consumerExecutor = Executors.newFixedThreadPool(CONSUMER_CAPACITY);
 
-        final Broker<Integer> broker = new BlockingQueueBroker<>();
+        final Broker<Integer> broker = new WaitNotifyBroker<>();
 
 
         //Java 5+ Way

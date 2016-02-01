@@ -11,8 +11,6 @@ public class BlockingQueueBroker<T> implements Broker<T> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BlockingQueueBroker.class);
 
-    private static final Integer DEFAULT_CAPACITY = 10;
-
     private BlockingQueue<T> blockingQueue;
 
     public BlockingQueueBroker() {
